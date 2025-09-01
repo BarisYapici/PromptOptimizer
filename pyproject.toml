@@ -17,10 +17,3 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
-
-[dependency-groups]
-dev = [
-    "pytest>=8.4.1",
-    "black>=25.1.0",
-    "isort>=6.0.1",
-]
