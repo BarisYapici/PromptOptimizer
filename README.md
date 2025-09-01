@@ -19,16 +19,12 @@
 ├── summarize_repo.py  
 ├── src/  
 │   └── promptoptimizerscai/  
-│       ├── __init__.py  
 │       ├── adapters/  
-│       │   ├── __init__.py  
 │       │   ├── base.py  
 │       │   ├── openai_adapter.py  
 │       │   └── huggingface_adapter.py  
 │       └── core/  
-│           └── __init__.py  
 └── tests/  
-    └── __init__.py  
 
 ## Installation
 
