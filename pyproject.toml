@@ -1,0 +1,26 @@
+[project]
+name = "promptoptimizerscai"
+version = "0.1.0"
+description = "A tool for optimizing prompts that is built on the concept of ProTeGi by Microsoft"
+authors = [
+    {name = "BARIS YAPICI", email = "baris.yapici@scai.fraunhofer.de"},
+]
+dependencies = ["openai>=1.102.0", "transformers>=4.56.0", "torch>=2.7.1", "scikit-learn>=1.7.1", "tqdm>=4.67.1"]
+requires-python = ">=3.11"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "black>=25.1.0",
+    "isort>=6.0.1",
+]
