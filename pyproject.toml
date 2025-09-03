@@ -5,7 +5,7 @@ description = "A tool for optimizing prompts that is built on the concept of Pro
 authors = [
     {name = "BARIS YAPICI", email = "baris.yapici@scai.fraunhofer.de"},
 ]
-dependencies = ["openai>=1.102.0", "transformers>=4.56.0", "torch>=2.7.1", "scikit-learn>=1.7.1", "tqdm>=4.67.1", "pytest>=8.4.1"]
+dependencies = ["openai>=1.102.0", "transformers>=4.56.0", "torch>=2.7.1", "scikit-learn>=1.7.1", "tqdm>=4.67.1", "pytest>=8.4.1", "langgraph>=0.6.6"]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}

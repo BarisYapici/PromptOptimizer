@@ -1,14 +1,13 @@
 # PromptOptimizer (SCAI)
 
-**PromptOptimizer** is a Python-based, model-agnostic tool for optimizing prompts for Large Language Models (LLMs). It is designed for scientific, industrial, and research use, with a modular and extensible architecture.
+**PromptOptimizer** is a Python-based, model-agnostic tool for optimizing prompts for Large Language Models (LLMs). It is designed for scientific, industrial, and research use, with a modular architecture.
 
 ## Features
 
 - **Model-Agnostic:** Supports multiple LLM providers (OpenAI, HuggingFace, etc.) via adapters.
 - **Agentic Workflows:** Context-aware prompt optimization with branching logic.
-- **Scientific Methodology:** Reproducible, documented, and empirically validated.
 - **Extensible:** Easily add new adapters, optimizers, and pipeline components.
-- **Automated Repo Summarization:** Script to summarize the codebase for LLM context transfer.
+- **Automated Repo Summarization:** Script to summarize the codebase with differing levels of detail.
 
 ## Project Structure
 
