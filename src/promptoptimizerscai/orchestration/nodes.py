@@ -1,13 +1,11 @@
 from .state import PromptOptimizerState
+from .prompts.context_detection import CONTEXT_DETECTION_SYSTEM_PROMPT
 
-def detect_context_node(state: PromptOptimizerState) -> PromptOptimizerState:
-    prompt = state.prompt.lower()
-    if "entity" in prompt:
-        state.context = "scierc"
-    elif "fact" in prompt:
-        state.context = "scifact"
-    else:
-        state.context = "generalnlp"
+
+def detect_context_node(state: PromptOptimizerState, llm_adapter) -> PromptOptimizerState:
+    prompt = state.prompt
+    context_label = llm_adapter.call(prompt, system_prompt=CONTEXT_DETECTION_SYSTEM_PROMPT)
+    state.context = context_label.strip().lower()
     state.trace.append("DetectContext")
     return state
 

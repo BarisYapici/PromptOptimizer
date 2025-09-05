@@ -1,5 +1,6 @@
 from langgraph.graph import StateGraph, END
 from .state import PromptOptimizerState
+from .adapters.openai import OpenAIAdapter
 from .nodes import (
     detect_context_node,
     route_to_optimizer_node,
@@ -9,12 +10,16 @@ from .nodes import (
     output_best_prompt_node,
 )
 from .router import optimizer_router
+import functools
 
-def build_agentic_prompt_optimizer_graph():
-    # Use Pydantic model for state typing
+def build_agentic_prompt_optimizer_graph(llm_adapter):
     builder = StateGraph(state_type=PromptOptimizerState)
 
-    builder.add_node("DetectContext", detect_context_node)
+    # Use functools.partial to inject the adapter into the context detection node.
+    builder.add_node(
+        "DetectContext",
+        functools.partial(detect_context_node, llm_adapter=llm_adapter)
+    )
     builder.add_node("RouteToOptimizer", route_to_optimizer_node)
     builder.add_node("SciERC_EvaluatePrompt", scierc_evaluate_prompt_node)
     builder.add_node("SciFact_EvaluatePrompt", scifact_evaluate_prompt_node)
@@ -30,3 +35,4 @@ def build_agentic_prompt_optimizer_graph():
     builder.add_edge("OutputBestPrompt", END)
 
     return builder.compile()
+
