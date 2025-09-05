@@ -1,5 +1,5 @@
 from transformers import pipeline
-from .base import ModelAdapter
+from promptoptimizerscai.adapters.base import ModelAdapter
 
 class HuggingFaceAdapter(ModelAdapter):
     def __init__(self, model_name: str, task: str = "text-generation", device: int = -1, **kwargs):

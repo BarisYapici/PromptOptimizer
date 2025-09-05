@@ -1,4 +1,4 @@
-from .state import PromptOptimizerState
+from promptoptimizerscai.orchestration.state import PromptOptimizerState
 
 def optimizer_router(state: PromptOptimizerState) -> str:
     if state.context == "scierc":

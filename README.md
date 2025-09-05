@@ -97,6 +97,19 @@ answer = hf_adapter.generate("What is the capital of France?", context="France's
 - All code is under `src/promptoptimizerscai/`.
 ```
 
+## Running Tests
+
+All tests are in the `tests/` directory and use `pytest`.
+
+To run all tests:
+```bash
+pdm test
+```
+To run a specific test file:
+```bash
+pdm run pytest tests/test_agentic_workflow.py
+```
+
 ## License
 
 MIT License

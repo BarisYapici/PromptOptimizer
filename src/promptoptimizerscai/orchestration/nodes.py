@@ -1,6 +1,5 @@
-from .state import PromptOptimizerState
-from .prompts.context_detection import CONTEXT_DETECTION_SYSTEM_PROMPT
-
+from promptoptimizerscai.orchestration.state import PromptOptimizerState
+from promptoptimizerscai.prompts.context_detection import CONTEXT_DETECTION_SYSTEM_PROMPT
 
 def detect_context_node(state: PromptOptimizerState, llm_adapter) -> PromptOptimizerState:
     prompt = state.prompt

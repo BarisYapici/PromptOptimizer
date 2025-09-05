@@ -1,7 +1,7 @@
 from langgraph.graph import StateGraph, END
-from .state import PromptOptimizerState
-from .adapters.openai import OpenAIAdapter
-from .nodes import (
+from promptoptimizerscai.orchestration.state import PromptOptimizerState
+from promptoptimizerscai.adapters.openai_adapter import OpenAIAdapter
+from promptoptimizerscai.orchestration.nodes import (
     detect_context_node,
     route_to_optimizer_node,
     scierc_evaluate_prompt_node,
@@ -9,7 +9,7 @@ from .nodes import (
     generalnlp_evaluate_prompt_node,
     output_best_prompt_node,
 )
-from .router import optimizer_router
+from promptoptimizerscai.orchestration.router import optimizer_router
 import functools
 
 def build_agentic_prompt_optimizer_graph(llm_adapter):
